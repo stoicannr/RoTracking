@@ -1,0 +1,15 @@
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\bin\Debug\net5.0\RoTracking.LiveDataService.deps.json
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\bin\Debug\net5.0\RoTracking.LiveDataService.runtimeconfig.json
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\bin\Debug\net5.0\RoTracking.LiveDataService.runtimeconfig.dev.json
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\bin\Debug\net5.0\RoTracking.LiveDataService.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\bin\Debug\net5.0\ref\RoTracking.LiveDataService.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\bin\Debug\net5.0\RoTracking.LiveDataService.pdb
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.csproj.AssemblyReference.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.AssemblyInfoInputs.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.AssemblyInfo.cs
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\ref\RoTracking.LiveDataService.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.pdb
+C:\Users\Robert\source\repos\RoTracking\RoTracking.LiveDataService\obj\Debug\net5.0\RoTracking.LiveDataService.genruntimeconfig.cache

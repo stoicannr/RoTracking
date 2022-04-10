@@ -1,0 +1,6 @@
+C:\Users\Robert\source\repos\RoTracking\RoTracking.Database\bin\Debug\RoTracking.Database.dacpac
+C:\Users\Robert\source\repos\RoTracking\RoTracking.Database\bin\Debug\RoTracking.Database.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.Database\bin\Debug\RoTracking.Database.pdb
+C:\Users\Robert\source\repos\RoTracking\RoTracking.Database\obj\Debug\RoTracking.Database.sqlproj.AssemblyReference.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.Database\obj\Debug\RoTracking.Database.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.Database\obj\Debug\RoTracking.Database.pdb

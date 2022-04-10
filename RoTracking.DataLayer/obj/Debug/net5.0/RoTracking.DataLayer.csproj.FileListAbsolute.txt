@@ -1,0 +1,15 @@
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\bin\Debug\net5.0\RoTracking.DataLayer.deps.json
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\bin\Debug\net5.0\RoTracking.DataLayer.runtimeconfig.json
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\bin\Debug\net5.0\RoTracking.DataLayer.runtimeconfig.dev.json
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\bin\Debug\net5.0\RoTracking.DataLayer.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\bin\Debug\net5.0\ref\RoTracking.DataLayer.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\bin\Debug\net5.0\RoTracking.DataLayer.pdb
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.csproj.AssemblyReference.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.AssemblyInfoInputs.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.AssemblyInfo.cs
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\ref\RoTracking.DataLayer.dll
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.pdb
+C:\Users\Robert\source\repos\RoTracking\RoTracking.DataLayer\obj\Debug\net5.0\RoTracking.DataLayer.genruntimeconfig.cache
