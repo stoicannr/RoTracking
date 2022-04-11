@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using RoTracking.BusinessLogic.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +8,15 @@ using System.Threading.Tasks;
 
 namespace RoTracking.Controllers
 {
-    public class ObjectsController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ObjectsController : ControllerBase
     {
-        public IActionResult Index()
+        private IVehicleService _vehicleService;
+
+        public ObjectsController(IVehicleService vehicleService)
         {
-            return View();
+            _vehicleService = vehicleService;
         }
     }
 }

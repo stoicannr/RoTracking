@@ -35,6 +35,8 @@ namespace RoTracking
 
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IObjectsRepository, ObjectsRepository>();
+            services.AddScoped<IVehicleService, VehicleService>();
             services.AddScoped<JwtService>();
 
             services.AddControllersWithViews().AddNewtonsoftJson((options) => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
