@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoTracking.BusinessLogic.DTOs
 {
-    public class ObjectDto
+    public class VehicleDto
     {
         public Guid Id { get; set; }
         public string Code { get; set; }
@@ -17,11 +17,11 @@ namespace RoTracking.BusinessLogic.DTOs
         public decimal Mileage { get; set; }
         public string Color { get; set; }
 
-        public ObjectDto ()
+        public VehicleDto ()
         {
 
         }
-        public ObjectDto(Vehicle vehicle)
+        public VehicleDto(Vehicle vehicle)
         {
             Code = vehicle.Code;
             Name = vehicle.Name;

@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoTracking.DataLayer", "RoT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoTracking.BusinessLogic", "RoTracking.BusinessLogic\RoTracking.BusinessLogic.csproj", "{1EB6AF5B-1317-4A46-B9E2-5EAF3BB68B7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoTracking.DataCollector", "RoTracking.DataCollector\RoTracking.DataCollector.csproj", "{2E57A93D-4354-4047-A3EE-520F214E0B90}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{1EB6AF5B-1317-4A46-B9E2-5EAF3BB68B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB6AF5B-1317-4A46-B9E2-5EAF3BB68B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB6AF5B-1317-4A46-B9E2-5EAF3BB68B7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E57A93D-4354-4047-A3EE-520F214E0B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E57A93D-4354-4047-A3EE-520F214E0B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E57A93D-4354-4047-A3EE-520F214E0B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E57A93D-4354-4047-A3EE-520F214E0B90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

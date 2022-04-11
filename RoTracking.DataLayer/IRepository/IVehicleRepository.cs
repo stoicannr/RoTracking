@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoTracking.DataLayer.IRepository
 {
-    public interface IObjectsRepository:IBaseRepository<Vehicle>
+    public interface IVehicleRepository:IBaseRepository<Vehicle>
     {
 
     }

@@ -15,9 +15,9 @@ namespace RoTracking.BusinessLogic.Services
 
         public IPersonRepository _personRepository;
         private JwtService _jwtService;
-        public PersonService(IPersonRepository readerRepository, JwtService jwtService)
+        public PersonService(IPersonRepository personRepository, JwtService jwtService)
         {
-            _personRepository = readerRepository;
+            _personRepository = personRepository;
             _jwtService = jwtService;
         }
 

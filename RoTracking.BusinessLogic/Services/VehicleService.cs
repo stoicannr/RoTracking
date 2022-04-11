@@ -15,11 +15,9 @@ namespace RoTracking.BusinessLogic.Services
     {
 
         private readonly IVehicleRepository _vehicleRepository;
-        private readonly ILogger _logger;
-        public VehicleService(IVehicleRepository vehicleRepository, ILogger logger)
+        public VehicleService(IVehicleRepository vehicleRepository)
         {
             _vehicleRepository = vehicleRepository;
-            _logger = logger;
         }
 
         public async Task<VehicleDto> CreateVehicle(VehicleDto vehicleDto)
@@ -28,7 +26,7 @@ namespace RoTracking.BusinessLogic.Services
             {
                 if (vehicleDto is not null)
                 {
-                    var vehicle = new Vehicle { Id = Guid.NewGuid(), Code = vehicleDto.Code, Color = vehicleDto.Color, Mileage = vehicleDto.Mileage, Name = vehicleDto.Name }
+                    var vehicle = new Vehicle { Id = Guid.NewGuid(), Code = vehicleDto.Code, Color = vehicleDto.Color, Mileage = vehicleDto.Mileage, Name = vehicleDto.Name };
                     _vehicleRepository.Add(vehicle);
                     _vehicleRepository.Save();
                     var createdVehicle = new VehicleDto(vehicle);
@@ -38,7 +36,7 @@ namespace RoTracking.BusinessLogic.Services
             }
             catch (Exception e)
             {
-                _logger.LogError("There is an error");
+                //_logger.LogError("There is an error");
             }
             return new VehicleDto();
         }
@@ -56,7 +54,7 @@ namespace RoTracking.BusinessLogic.Services
             }
             catch (Exception e)
             {
-                _logger.LogError("There is an error");
+                //_logger.LogError("There is an error");
             }
             return false;
         }
@@ -75,7 +73,7 @@ namespace RoTracking.BusinessLogic.Services
             }
             catch (Exception e)
             {
-                _logger.LogError("There is an error");
+                //_logger.LogError("There is an error");
             }
             return new VehicleDto();
         }
