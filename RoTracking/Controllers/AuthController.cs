@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace RoTracking.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         public IPersonService _personService;

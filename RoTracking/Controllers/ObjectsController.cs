@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoTracking.BusinessLogic.DTOs;
 using RoTracking.BusinessLogic.IServices;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace RoTracking.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ObjectsController : ControllerBase
     {
         private IVehicleService _vehicleService;
@@ -19,6 +20,23 @@ namespace RoTracking.Controllers
             _vehicleService = vehicleService;
         }
 
+        [HttpPost("CreateVehicle")]
+        public async Task<VehicleDto> CreateVehicle(VehicleDto vehicleDto)
+        {
+            return await _vehicleService.CreateVehicle(vehicleDto);
+        }
+
+        [HttpDelete("DeleteVehicle")]
+        public async Task<bool> DeleteVehicle(VehicleDto vehicleDto)
+        {
+            return await _vehicleService.DeleteVehicle(vehicleDto);
+        }
+
+        [HttpPut("UpdateVehicle")]
+        public async Task<VehicleDto> UpdateVehicle(VehicleDto vehicleDto)
+        {
+            return await _vehicleService.UpdateVehicle(vehicleDto);
+        }
 
     }
 }

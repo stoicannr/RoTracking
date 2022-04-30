@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using RoTracking.BusinessLogic.DTOs;
 using RoTracking.BusinessLogic.IServices;
+using RoTracking.DataLayer.Context;
 using RoTracking.DataLayer.IRepository;
 using RoTracking.DataLayer.Models;
 using System;
@@ -15,37 +16,26 @@ namespace RoTracking.BusinessLogic.Services
     {
 
         private readonly IVehicleRepository _vehicleRepository;
-        public VehicleService(IVehicleRepository vehicleRepository)
+
+        public VehicleService(IVehicleRepository vehicleRepository, RoTrackingDbContext roTrackingDbContext)
         {
             _vehicleRepository = vehicleRepository;
         }
 
         public async Task<VehicleDto> CreateVehicle(VehicleDto vehicleDto)
         {
-            try
-            {
-                if (vehicleDto is not null)
-                {
-                    var vehicle = new Vehicle { Id = Guid.NewGuid(), Code = vehicleDto.Code, Color = vehicleDto.Color, Mileage = vehicleDto.Mileage, Name = vehicleDto.Name };
-                    _vehicleRepository.Add(vehicle);
-                    _vehicleRepository.Save();
-                    var createdVehicle = new VehicleDto(vehicle);
-                    return createdVehicle;
-                }
-
-            }
-            catch (Exception e)
-            {
-                //_logger.LogError("There is an error");
-            }
-            return new VehicleDto();
+            var vehicle = new Vehicle { Code = vehicleDto.Code, Color = vehicleDto.Color, Mileage = vehicleDto.Mileage, Name = vehicleDto.Name };
+            await _vehicleRepository.AddAsync(vehicle);
+            await _vehicleRepository.SaveAsync();
+            var createdVehicle = new VehicleDto(vehicle);
+            return createdVehicle;
         }
 
         public async Task<bool> DeleteVehicle(VehicleDto vehicleDto)
         {
             try
             {
-                if(vehicleDto is not null)
+                if (vehicleDto is not null)
                 {
                     _vehicleRepository.Remove(vehicleDto.Id);
                     _vehicleRepository.Save();

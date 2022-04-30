@@ -24,6 +24,14 @@ namespace RoTracking.DataLayer.Repository
             _roTrackingContext.Add(entity);
             _roTrackingContext.SaveChanges();
         }
+        public async Task AddAsync(T entity)
+        {
+            await _roTrackingContext.AddAsync(entity);
+        }
+        public async Task SaveAsync()
+        {
+            await _roTrackingContext.SaveChangesAsync();
+        }
 
         public T Get(Guid id)
         {
