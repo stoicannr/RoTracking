@@ -13,6 +13,7 @@ namespace RoTracking.DataLayer.Models
         public string Name { get; set; }
         public DateTime Release { get; set; }
         public DateTime AddingDate { get; set; }
-        
+        public string Brand { get; set; }
+
     }
 }

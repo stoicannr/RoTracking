@@ -9,6 +9,6 @@ namespace RoTracking.DataLayer.IRepository
 {
     public interface IDeviceRepository:IBaseRepository<Device>
     {
-
+     
     }
 }

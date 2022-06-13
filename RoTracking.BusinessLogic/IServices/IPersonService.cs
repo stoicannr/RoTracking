@@ -14,6 +14,7 @@ namespace RoTracking.BusinessLogic.IServices
         public Task<PersonDto> UpdatePerson(PersonDto readerDto);
         public Task<PersonDto> DeletePerson(Guid readerId);
         public Task<PersonDto> GetPerson(Guid readerId);
+        public Task<IEnumerable<PersonDto>> GetAllPersons();
         public PersonDto GetPerson(Person person);
         public Task<PersonDto> PersonRegister(PersonDto reader);
         public Person PersonLogin(LoginDto loginDto);

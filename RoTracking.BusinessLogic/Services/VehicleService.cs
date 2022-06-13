@@ -24,7 +24,8 @@ namespace RoTracking.BusinessLogic.Services
 
         public async Task<VehicleDto> CreateVehicle(VehicleDto vehicleDto)
         {
-            var vehicle = new Vehicle { Code = vehicleDto.Code, Color = vehicleDto.Color, Mileage = vehicleDto.Mileage, Name = vehicleDto.Name };
+            var vehicle = new Vehicle { Code = vehicleDto.code, Color = vehicleDto.color, Mileage = vehicleDto.mileage,
+                Name = vehicleDto.name, Brand = vehicleDto.brand, Model = vehicleDto.model };
             await _vehicleRepository.AddAsync(vehicle);
             await _vehicleRepository.SaveAsync();
             var createdVehicle = new VehicleDto(vehicle);
@@ -37,7 +38,7 @@ namespace RoTracking.BusinessLogic.Services
             {
                 if (vehicleDto is not null)
                 {
-                    _vehicleRepository.Remove(vehicleDto.Id);
+                    _vehicleRepository.Remove(vehicleDto.id);
                     _vehicleRepository.Save();
                     return true;
                 }
@@ -49,13 +50,19 @@ namespace RoTracking.BusinessLogic.Services
             return false;
         }
 
+        public async Task<IEnumerable<VehicleDto>> GetAllVehicles()
+        {
+            var vehicles = await _vehicleRepository.GetAll();
+            var vehiclesDto = vehicles.Select((v) => new VehicleDto(v));
+            return vehiclesDto;
+        }
         public async Task<VehicleDto> UpdateVehicle(VehicleDto vehicleDto)
         {
             try
             {
                 if (vehicleDto is not null)
                 {
-                    var updatedVehicle = _vehicleRepository.Get(vehicleDto.Id);
+                    var updatedVehicle = _vehicleRepository.Get(vehicleDto.id);
                     _vehicleRepository.Update(updatedVehicle);
                     _vehicleRepository.Save();
                     return new VehicleDto(updatedVehicle);

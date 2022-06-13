@@ -14,11 +14,9 @@ namespace RoTracking.BusinessLogic.Services
     public class DeviceService : IDeviceService
     {
         private readonly IDeviceRepository _deviceRepository;
-        //private readonly ILogger _logger;
         public DeviceService(IDeviceRepository deviceRepository)
         {
             _deviceRepository = deviceRepository;
-            //_logger = logger;
         }
 
         public async Task<DeviceDto> CreateDevice(DeviceDto deviceDto)
@@ -27,7 +25,7 @@ namespace RoTracking.BusinessLogic.Services
             {
                 if (deviceDto is not null)
                 {
-                    var device = new Device { Id = deviceDto.Id, AddingDate = deviceDto.AddingDate, Release = deviceDto.Release, Name = deviceDto.Name, Code = deviceDto.Name };
+                    var device = new Device { Id = deviceDto.id, AddingDate = DateTime.Now, Release = deviceDto.release, Name = deviceDto.name, Code = deviceDto.code, Brand = deviceDto.brand };
                     _deviceRepository.Add(device);
                     _deviceRepository.Save();
                     var createdDevice = new DeviceDto(device);
@@ -48,7 +46,7 @@ namespace RoTracking.BusinessLogic.Services
             {
                 if (deviceDto is not null)
                 {
-                    _deviceRepository.Remove(deviceDto.Id);
+                    _deviceRepository.Remove(deviceDto.id);
                     _deviceRepository.Save();
                     return true;
                 }
@@ -60,13 +58,20 @@ namespace RoTracking.BusinessLogic.Services
             return false;
         }
 
+        public async Task<IEnumerable<DeviceDto>> GetAllDevices()
+        {
+            var alldevices = await _deviceRepository.GetAll();
+            var allDevicesDtos = alldevices.Select(d => new DeviceDto(d));
+            return allDevicesDtos;
+        }
+
         public async Task<DeviceDto> UpdateDevice(DeviceDto deviceDto)
         {
             try
             {
                 if (deviceDto is not null)
                 {
-                    var updatedVehicle = _deviceRepository.Get(deviceDto.Id);
+                    var updatedVehicle = _deviceRepository.Get(deviceDto.id);
                     _deviceRepository.Update(updatedVehicle);
                     _deviceRepository.Save();
                     return new DeviceDto(updatedVehicle);
@@ -78,6 +83,7 @@ namespace RoTracking.BusinessLogic.Services
             }
             return new DeviceDto();
         }
+
 
     }
 }

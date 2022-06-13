@@ -15,25 +15,43 @@ namespace RoTracking.BusinessLogic.DTOs
         }
         public PersonDto(Person person)
         {
-            Username = person.Username;
-            FirstName = person.FirstName;
-            LastName = person.LastName;
-            Email = person.Email;
-            Id = person.Id;
-            IsAuthenticatedSuccessfully = person?.Username?.Length > 0 && person?.Password?.Length > 0 ? true : false;
+            username = person.Username;
+            firstname = person.FirstName;
+            lastname = person.LastName;
+            email = person.Email;
+            id = person.Id;
+            password = person.Password;
+            isAuthenticatedSuccessfully = person?.Username?.Length > 0 && person?.Password?.Length > 0 ? true : false;
+            code = person.Code;
+        }
+
+        public void UpdatePerson(PersonDto personDto, Person personToUpdate)
+        {
+            personToUpdate.FirstName = personDto.firstname;
+            personToUpdate.LastName = personDto.lastname;
+            personToUpdate.Code = personDto.code;
+            personToUpdate.Email = personDto.email;
         }
 
         public Person CopyTo(PersonDto personDto)
         {
-            return new Person { FirstName = personDto.FirstName, LastName = personDto.LastName, Email = personDto.Email, Id = personDto.Id, };
+            return new Person
+            {
+                FirstName = personDto.firstname,
+                LastName = personDto.lastname,
+                Email = personDto.email,
+                Id = personDto.id,
+                Password = personDto.password
+            };
         }
-        public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Username { get; set; }
-        public bool IsAuthenticatedSuccessfully { get; set; }
+        public Guid id { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+        public string username { get; set; }
+        public bool isAuthenticatedSuccessfully { get; set; }
+        public string code { get; set; }
     }
 
 }

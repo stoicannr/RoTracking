@@ -20,6 +20,12 @@ namespace RoTracking.Controllers
             _vehicleService = vehicleService;
         }
 
+        [HttpGet("GetAllVehicles")]
+        public async Task<IEnumerable<VehicleDto>> GetAllVehicles()
+        {
+            return await _vehicleService.GetAllVehicles();
+        }
+
         [HttpPost("CreateVehicle")]
         public async Task<VehicleDto> CreateVehicle(VehicleDto vehicleDto)
         {

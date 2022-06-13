@@ -14,5 +14,7 @@ namespace RoTracking.BusinessLogic.IServices
         Task<DeviceDto> UpdateDevice(DeviceDto deviceDto);
 
         Task<bool> DeleteDevice(DeviceDto deviceDto);
+
+        Task<IEnumerable<DeviceDto>> GetAllDevices();
     }
 }

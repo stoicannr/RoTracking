@@ -9,13 +9,14 @@ namespace RoTracking.BusinessLogic.DTOs
 {
     public class DeviceDto
     {
-        public Guid Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public DateTime Release { get; set; }
-        public DateTime AddingDate { get; set; }
-        public string VehicleId { get; set; }
-        public string DriverId { get; set; }
+        public Guid id { get; set; }
+        public string code { get; set; }
+        public string name { get; set; }
+        public DateTime release { get; set; }
+        public DateTime created { get; set; }
+        public VehicleDto vehicle { get; set; }
+        public PersonDto driver { get; set; }
+        public string brand { get; set; }
 
         public DeviceDto()
         {
@@ -24,11 +25,12 @@ namespace RoTracking.BusinessLogic.DTOs
 
         public DeviceDto(Device device)
         {
-            Id = device.Id;
-            Code = device.Code;
-            Name = device.Name;
-            Release = device.Release;
-            AddingDate = device.AddingDate;
+            id = device.Id;
+            code = device.Code;
+            name = device.Name;
+            release = device.Release;
+            created = device.AddingDate;
+            brand = device.Brand;
         }
     }
 }

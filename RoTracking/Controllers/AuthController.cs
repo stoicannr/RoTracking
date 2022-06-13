@@ -37,7 +37,18 @@ namespace RoTracking.Controllers
             }
         }
 
-
+        [HttpGet("GetAllPersons")]
+        public async Task<IEnumerable<PersonDto>> GetAllPersons()
+        {
+            try
+            {
+                return await _personService.GetAllPersons();
+            }
+            catch (ArgumentException e)
+            {
+                return null;
+            }
+        }
 
         [HttpPost("Login")]
         public async Task<PersonDto> Login(LoginDto loginDto)

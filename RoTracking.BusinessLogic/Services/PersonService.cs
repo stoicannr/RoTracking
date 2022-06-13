@@ -50,19 +50,23 @@ namespace RoTracking.BusinessLogic.Services
 
         public async Task<PersonDto> PersonRegister(PersonDto person)
         {
-            var personToCreate = new Person { Username = person.Username, Password = BCrypt.Net.BCrypt.HashPassword(person.Password), LastName = person.LastName, FirstName = person.FirstName, };
+            var personToCreate = new Person { Code = person.code, LastName = person.lastname, FirstName = person.firstname, Email = person.email };
             _personRepository.Add(personToCreate);
-            return new PersonDto { FirstName = personToCreate.FirstName, LastName = personToCreate.LastName, Email = personToCreate.Email };
+            return new PersonDto { code = personToCreate.Code, firstname = personToCreate.FirstName, lastname = personToCreate.LastName, email = personToCreate.Email };
         }
 
         public Person PersonLogin(LoginDto loginDto)
         {
-           return _personRepository.GetByUsername(loginDto.Username);
+            return _personRepository.GetByUsername(loginDto.Username);
         }
 
-        public Task<PersonDto> UpdatePerson(PersonDto personDto)
+        public async Task<PersonDto> UpdatePerson(PersonDto personDto)
         {
-            throw new NotImplementedException();
+            var personToUpdate = _personRepository.Get(personDto.id);
+            personDto.UpdatePerson(personDto, personToUpdate);
+            _personRepository.Update(personToUpdate);
+            await _personRepository.SaveAsync();
+            return personDto;
         }
 
         public PersonDto GetPerson(Person reader)
@@ -70,6 +74,13 @@ namespace RoTracking.BusinessLogic.Services
             var readerToReturn = _personRepository.Get(reader.Id);
             var readerDto = new PersonDto(readerToReturn);
             return readerDto;
+        }
+
+        public async Task<IEnumerable<PersonDto>> GetAllPersons()
+        {
+            var allPersons = await _personRepository.GetAll();
+            var allPersonsDto = allPersons.Select(p => new PersonDto(p));
+            return allPersonsDto;
         }
     }
 }

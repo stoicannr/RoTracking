@@ -14,7 +14,7 @@ namespace RoTracking.DataLayer.IRepository
         void Remove(Guid id);
         void Update(T entity);
         Task AddAsync(T entity);
-        IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null);
+        Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filter = null);
         void Save();
         Task SaveAsync();
 

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -13,6 +14,7 @@ using RoTracking.BusinessLogic.Services;
 using RoTracking.DataLayer.Context;
 using RoTracking.DataLayer.IRepository;
 using RoTracking.DataLayer.Repository;
+using System;
 
 namespace RoTracking
 {
@@ -56,12 +58,19 @@ namespace RoTracking
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
             app.UseCors(options => options.WithOrigins( "http://localhost:3000")
                                           .AllowAnyHeader()
                                           .AllowAnyMethod()
                                           .AllowCredentials());
+                
+            var webSocketOptions = new WebSocketOptions
+            {
+                KeepAliveInterval = TimeSpan.FromMinutes(2)
+            };
+
+            app.UseWebSockets(webSocketOptions);
+            app.UseWebSockets();
 
             app.UseAuthorization();
 
@@ -69,6 +78,8 @@ namespace RoTracking
             {
                 endpoints.MapControllers();
             });
+
+
         }
     }
 }
